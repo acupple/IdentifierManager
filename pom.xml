@@ -38,6 +38,7 @@
             <version>4.9</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
         	<groupId>org.mokey.mapping</groupId>
         	<artifactId>fuzzymapping</artifactId>
