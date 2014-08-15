@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<weights>
+		<weight index="0" name="ip3" type="String" value="0.4" />
+		<weight index="1" name="ua" type="String" value="0.1"/>
+		<weight index="2" name="ip" type="IP" value="0.1" />
+		<weight index="3" name="os" type="String" value="0.1" />
+		<weight index="4" name="osvs" type="Number" value="0.1" />
+		<weight index="5" name="browser" type="String" value="0.1" />
+		<weight index="6" name="lng" type="String" value="0.1" />
+		<weight index="7" name="uuid" type="String" value="0" /> <!-- used for visitor id -->>
+	</weights>
+	<maxvalue>0.5</maxvalue>
+</configuration>

@@ -1,18 +1,9 @@
 package org.mokey.mapping.identifiermanager.models;
 
-import java.util.UUID;
 
-import net.sf.uadetector.OperatingSystem;
-import net.sf.uadetector.ReadableUserAgent;
-import net.sf.uadetector.UserAgentStringParser;
-import net.sf.uadetector.service.UADetectorServiceFactory;
-
-public class Identifier {
-	
-	private static UserAgentStringParser parser = null;
-	
+public class Identifier {	
 	private String uuid;
-	
+	private String ip3;
 	private String ip; 
 	private String ua;
 	private String os;
@@ -20,35 +11,16 @@ public class Identifier {
 	private String browser;
 	private String lng;
 	
-	public Identifier(){}
-	
-	public Identifier(String ip, String ua, String lng){
-		
-		this.uuid = UUID.randomUUID().toString();
-		
-		this.ip = ip;
-		this.ua = ua;
-		ReadableUserAgent agent = parser.parse(this.ua);
-		OperatingSystem ops = agent.getOperatingSystem();
-		this.os = ops.getFamilyName();
-		String[] tokens = ops.getName().split(" ");
-		if(tokens != null && tokens.length > 1){
-			this.osvs = Integer.parseInt(tokens[1]);
-		}
-		
-		this.browser = agent.getFamily().getName().toLowerCase();
-		
-		tokens = lng.split(",");
-		if(tokens != null)
-			this.lng = tokens[0];
-	}
-	
-	static{
-		parser = UADetectorServiceFactory.getResourceModuleParser();
-	}
-	
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
+	}
+
+	public String getIp3() {
+		return ip3;
+	}
+
+	public void setIp3(String ip3) {
+		this.ip3 = ip3;
 	}
 
 	public void setIp(String ip) {
